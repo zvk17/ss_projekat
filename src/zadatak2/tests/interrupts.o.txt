@@ -1,0 +1,44 @@
+Sections:
+Name                 Size     Start offset     End offset
+isr                  003e         0000            003e
+ivt                  0010         0000            0010
+
+Symbols:
+Value    Flags     Name              Section
+0000        sg     isr               isr            
+0000        sg     ivt               ivt            
+0054         l     asciiCode         *ABS*          
+0000         l     isr_reset         isr            
+0016         l     isr_terminal      isr            
+0005         l     isr_timer         isr            
+0000         e     myCounter         *UND*          
+0000         e     myStart           *UND*          
+ff02         l     term_in           *ABS*          
+ff00         l     term_out          *ABS*          
+
+
+Relocations:
+Section            Offset     Type                       Symbol
+ivt                 0000      LITTLE_ENDIAN_DATA         isr            
+ivt                 0004      LITTLE_ENDIAN_DATA         isr            
+ivt                 0006      LITTLE_ENDIAN_DATA         isr            
+isr                 0003      ABSOLUTE_INSTRUCTION       myStart        
+isr                 0029      PC_RELATIVE                myCounter      
+isr                 0035      ABSOLUTE_INSTRUCTION       myCounter      
+
+
+Contents of sections:
+Section isr:
+0000:  50 f0 00 00 00 b0 06 12 
+0008:  a0 00 00 00 54 b0 00 04 
+0010:  ff 00 a0 06 32 20 b0 06 
+0018:  12 b0 16 12 a0 00 04 ff 
+0020:  02 b0 00 04 ff 00 a0 07 
+0028:  03 ff fe a0 10 00 00 01 
+0030:  70 01 b0 00 04 00 00 a0 
+0038:  16 32 a0 06 32 20 
+
+Section ivt:
+0000:  00 00 00 00 05 00 16 00 
+0008:  00 00 00 00 00 00 00 00 
+

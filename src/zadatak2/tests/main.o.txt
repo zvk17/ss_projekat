@@ -1,0 +1,31 @@
+Sections:
+Name                 Size     Start offset     End offset
+myCode               001c         0000            001c
+myData               0002         0000            0002
+
+Symbols:
+Value    Flags     Name              Section
+0000        sg     myCode            myCode         
+0000        sg     myData            myData         
+0000         g     myCounter         myData         
+0000         g     myStart           myCode         
+ff10         l     tim_cfg           *ABS*          
+000a         l     wait              myCode         
+
+
+Relocations:
+Section            Offset     Type                       Symbol
+myCode              000d      ABSOLUTE_INSTRUCTION       myCounter      
+myCode              0019      ABSOLUTE_INSTRUCTION       myCode         
+
+
+Contents of sections:
+Section myCode:
+0000:  a0 00 00 00 01 b0 00 04 
+0008:  ff 10 a0 00 04 00 00 a0 
+0010:  10 00 00 05 74 01 52 f0 
+0018:  00 00 0a 00 
+
+Section myData:
+0000:  00 00 
+
