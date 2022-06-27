@@ -1,4 +1,4 @@
-#Asembler + Linker + Emulator
+# Asembler + Linker + Emulator
 
 Projekat iz predmeta Sistemski Softver
 
